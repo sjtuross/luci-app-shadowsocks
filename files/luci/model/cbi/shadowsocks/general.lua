@@ -21,7 +21,7 @@ end
 local has_redir, has_local, has_tunnel = has_ss_bin()
 
 if not has_redir and not has_local and not has_tunnel then
-	return Map(shadowsocks, "%s - %s" %{translate("ShadowSocks"),
+	return Map(shadowsocks, "%s - %s" %{translate("ShadowsocksR"),
 		translate("General Settings")}, '<b style="color:red">shadowsocks-libev binary file not found.</b>')
 end
 
@@ -39,7 +39,7 @@ uci:foreach(shadowsocks, "servers", function(s)
 	end
 end)
 
-m = Map(shadowsocks, "%s - %s" %{translate("ShadowSocks"), translate("General Settings")})
+m = Map(shadowsocks, "%s - %s" %{translate("ShadowsocksR"), translate("General Settings")})
 
 -- [[ Running Status ]]--
 s = m:section(TypedSection, "transparent_proxy", translate("Running Status"))

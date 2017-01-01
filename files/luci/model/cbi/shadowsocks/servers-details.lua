@@ -48,7 +48,7 @@ local function support_fast_open()
 	return luci.sys.exec("cat /proc/sys/net/ipv4/tcp_fastopen 2>/dev/null"):trim() == "3"
 end
 
-m = Map(shadowsocks, "%s - %s" %{translate("ShadowSocks"), translate("Edit Server")})
+m = Map(shadowsocks, "%s - %s" %{translate("ShadowsocksR"), translate("Edit Server")})
 m.redirect = luci.dispatcher.build_url("admin/services/shadowsocks/servers")
 
 if m.uci:get(shadowsocks, sid) ~= "servers" then
@@ -90,15 +90,15 @@ o = s:option(ListValue, "encrypt_method", translate("Encrypt Method"))
 for _, v in ipairs(encrypt_methods) do o:value(v, v:upper()) end
 o.rmempty = false
 
-o = s:option(ListValue, "plugin_protocol", translate("PROTOCOL"))
+o = s:option(ListValue, "plugin_protocol", translate("Protocol"))
 for _, v in ipairs(plugin_protocols) do o:value(v, v:upper()) end
 o.rmempty = false
 
-o = s:option(ListValue, "plugin_obfs", translate("OBFS"))
+o = s:option(ListValue, "plugin_obfs", translate("Obfs"))
 for _, v in ipairs(plugin_obfss) do o:value(v, v:upper()) end
 o.rmempty = false
 
-o = s:option(Value, "plugin_obfs_param", translate("OBFS-PARAM"))
+o = s:option(Value, "plugin_obfs_param", translate("Obfs-Param"))
 o.datatype = "host"
 o.rmempty = true
 

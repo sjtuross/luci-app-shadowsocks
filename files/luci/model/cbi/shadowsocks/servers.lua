@@ -4,7 +4,7 @@
 local m, s, o
 local shadowsocks = "shadowsocks"
 
-m = Map(shadowsocks, "%s - %s" %{translate("ShadowSocks"), translate("Servers Manage")})
+m = Map(shadowsocks, "%s - %s" %{translate("ShadowsocksR"), translate("Servers Manage")})
 
 -- [[ Servers Manage ]]--
 s = m:section(TypedSection, "servers")
@@ -42,13 +42,13 @@ function o.cfgvalue(...)
 	return v and v:upper() or "?"
 end
 
-o = s:option(DummyValue, "plugin_protocol", translate("PROTOCOL"))
+o = s:option(DummyValue, "plugin_protocol", translate("Protocol"))
 function o.cfgvalue(...)
 	local v = Value.cfgvalue(...)
 	return v and v:upper() or "?"
 end
 
-o = s:option(DummyValue, "plugin_obfs", translate("OBFS"))
+o = s:option(DummyValue, "plugin_obfs", translate("Obfs"))
 function o.cfgvalue(...)
 	local v = Value.cfgvalue(...)
 	return v and v:upper() or "?"
