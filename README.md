@@ -8,7 +8,7 @@ OpenWrt LuCI for Shadowsocks-libev
 简介
 ---
 
-本软件包是 [shadowsocks-libev][openwrt-shadowsocks] 的 LuCI 控制界面,
+本软件包是 [openwrt-shadowsocksr] 的 LuCI 控制界面,
 方便用户控制和使用「透明代理」「SOCKS5 代理」「端口转发」功能.  
 
 软件包文件结构:
@@ -43,15 +43,15 @@ OpenWrt LuCI for Shadowsocks-libev
 ---
 
 软件包的正常使用需要依赖 `iptables` 和 `ipset`.  
-软件包不显式依赖 `shadowsocks-libev`, 会根据用户添加的可执行文件启用相应的功能.  
-可执行文件可通过安装 [openwrt-shadowsocks][openwrt-shadowsocks] 中提供的 `shadowsocks-libev` 获得.  
+软件包不显式依赖 `shadowsocksr-libev`, 会根据用户添加的可执行文件启用相应的功能.  
+可执行文件可通过安装 [openwrt-shadowsocksr] 中提供的 `shadowsocksr-libev` 获得.  
 只有当文件存在时, 相应的功能才可被使用, 并显示相应的 LuCI 设置界面.  
 
  可执行文件  | 可选 | 功能        | TCP协议 | UDP协议 
  ------------|------|-------------|---------|-----------------------------------
- `ss-redir`  | 是   | 透明代理    | 支持    | 需安装 `iptables-mod-tproxy`, `ip`
- `ss-local`  | 是   | SOCKS5 代理 | 支持    | 支持
- `ss-tunnel` | 是   | 端口转发    | 支持    | 支持
+ `ssr-redir`  | 是   | 透明代理    | 支持    | 需安装 `iptables-mod-tproxy`, `ip`
+ `ssr-local`  | 是   | SOCKS5 代理 | 支持    | 支持
+ `ssr-tunnel` | 是   | 端口转发    | 支持    | 支持
 
 注: 可执行文件在 `$PATH` 环境变量所表示的搜索路径中, 都可被正确调用.
 
@@ -71,7 +71,7 @@ OpenWrt LuCI for Shadowsocks-libev
 tar xjf OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
 cd OpenWrt-SDK-ar71xx-*
 # Clone 项目
-git clone https://github.com/chenhw2/luci-app-shadowsocks.git package/luci-app-shadowsocks
+git clone https://github.com/sjtuross/luci-app-shadowsocks.git package/luci-app-shadowsocks
 # 编译 po2lmo (如果有po2lmo可跳过)
 pushd package/luci-app-shadowsocks/tools/po2lmo
 make && sudo make install
@@ -88,7 +88,7 @@ make package/luci-app-shadowsocks/compile V=99
  [release_url]: https://github.com/shadowsocks/luci-app-shadowsocks/releases/latest
  [gitter_badge]: https://badges.gitter.im/shadowsocks/luci-app-shadowsocks.svg
  [gitter_url]: https://gitter.im/shadowsocks/luci-app-shadowsocks
- [openwrt-shadowsocks]: https://github.com/shadowsocks/openwrt-shadowsocks
+ [openwrt-shadowsocksr]: https://github.com/sjtuross/openwrt-shadowsocksr
  [openwrt-sdk]: https://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
  [ss-rules]: https://github.com/shadowsocks/luci-app-shadowsocks/wiki/Instruction-of-ss-rules
  [Use-UCI-system]: https://github.com/shadowsocks/luci-app-shadowsocks/wiki/Use-UCI-system
