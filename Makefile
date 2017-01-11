@@ -25,7 +25,7 @@ define Package/luci-app-shadowsocks
 	SUBMENU:=3. Applications
 	TITLE:=LuCI Support for shadowsocksR-libev
 	PKGARCH:=all
-	DEPENDS:=+iptables +ipset
+	DEPENDS:=+iptables +ipset +resolveip
 endef
 
 define Package/luci-app-shadowsocks/description
