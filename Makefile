@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-shadowsocks
-PKG_VERSION:=1.3.7
+PKG_VERSION:=1.3.8
 PKG_RELEASE:=1
 
 PKG_LICENSE:=GPLv3
@@ -25,7 +25,7 @@ define Package/luci-app-shadowsocks
 	SUBMENU:=3. Applications
 	TITLE:=LuCI Support for shadowsocksR-libev
 	PKGARCH:=all
-	DEPENDS:=+iptables +ipset +resolveip
+	DEPENDS:=+iptables +ipset
 endef
 
 define Package/luci-app-shadowsocks/description
