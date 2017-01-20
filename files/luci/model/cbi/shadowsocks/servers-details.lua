@@ -94,6 +94,10 @@ o = s:option(ListValue, "plugin_protocol", translate("Protocol"))
 for _, v in ipairs(plugin_protocols) do o:value(v, v:upper()) end
 o.rmempty = false
 
+o = s:option(Value, "plugin_protocol_param", translate("Protocol-Param"))
+o.datatype = "string"
+o.rmempty = true
+
 o = s:option(ListValue, "plugin_obfs", translate("Obfs"))
 for _, v in ipairs(plugin_obfss) do o:value(v, v:upper()) end
 o.rmempty = false

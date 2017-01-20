@@ -136,6 +136,9 @@ msgstr "SOCKS5代理"
 msgid "Protocol"
 msgstr "协议插件"
 
+msgid "Protocol-Param"
+msgstr "协议参数"
+
 msgid "Obfs"
 msgstr "混淆插件"
 
